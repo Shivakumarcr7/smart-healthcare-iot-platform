@@ -1,0 +1,74 @@
+==================================================
+Smart Health Monitoring System using ESP32 & FreeRTOS
+Task 1 - Multi-Sensor Expansion Using FreeRTOS
+==================================================
+
+Required Software
+-----------------
+• Arduino IDE (Latest Version)
+• ESP32 Arduino Core (v3.x or later)
+
+Required Libraries
+------------------
+
+1. Adafruit SSD1306
+   Purpose:
+   OLED display driver for SSD1306 128x64 display.
+
+2. Adafruit GFX
+   Purpose:
+   Graphics library used by the OLED display.
+
+3. DHT Sensor Library
+   Purpose:
+   Reads temperature and humidity from the DHT22 sensor.
+
+4. Wire
+   Purpose:
+   I2C communication between ESP32 and OLED.
+
+5. esp_task_wdt
+   Purpose:
+   ESP32 Task Watchdog Timer for system reliability.
+
+6. FreeRTOS
+   Purpose:
+   Built into the ESP32 Arduino Core.
+   Used for multitasking, queues, semaphores, mutexes,
+   and task scheduling.
+
+Hardware Dependencies
+---------------------
+
+• ESP32 DevKit V1
+• SSD1306 OLED Display (128x64)
+• DHT22 Sensor
+• ECG Sensor (Simulated)
+• Blood Pressure Sensor (Simulated)
+• LED
+• Buzzer
+
+Compilation
+-----------
+
+Board:
+ESP32 Dev Module
+
+Upload Speed:
+115200
+
+CPU Frequency:
+240 MHz (Default)
+
+Flash Mode:
+QIO
+
+Partition Scheme:
+Default 4MB with SPIFFS
+
+Author
+------
+
+Shivakumar Gouda S Patil
+B.Tech - Artificial Intelligence & Machine Learning
+PES College of Engineering, Mandya
