@@ -1,0 +1,174 @@
+# Task 2 – Dual-Role IoT Monitoring System (Role-Based Dashboards)
+
+## Overview
+
+This project implements a **Dual-Role IoT Monitoring System** using the ESP32 microcontroller and FreeRTOS. The system separates patient health monitoring from hospital environmental monitoring by providing two logical dashboards. Medical staff can monitor patient vitals, while facility management can monitor environmental conditions. The project demonstrates multitasking, real-time sensor acquisition, OLED visualization, MQTT-based data simulation, and alert handling.
+
+---
+
+## Features
+
+- Dual-role monitoring architecture
+- FreeRTOS-based concurrent task execution
+- Medical Dashboard
+  - Heart Rate
+  - SpO₂
+  - Body Temperature
+- Facility Dashboard
+  - Room Temperature
+  - Oxygen Level
+  - Air Quality Index (AQI)
+- OLED dashboard switching every 3 seconds
+- MQTT topic simulation through Serial Monitor
+- Real-time alert system using LED and buzzer
+- Periodic data aggregation and summary reporting
+- Modular and scalable system architecture
+
+---
+
+## Hardware Components
+
+- ESP32 DevKit V1
+- SSD1306 OLED Display (128×64 I2C)
+- DHT22 Temperature Sensor
+- 4 × Potentiometers (Sensor Simulation)
+- LED
+- Active Buzzer
+- Breadboard
+- Jumper Wires
+
+---
+
+## Software Requirements
+
+- Arduino IDE / Wokwi
+- ESP32 Board Package
+- Adafruit SSD1306 Library
+- Adafruit GFX Library
+- DHT Sensor Library by Adafruit
+
+---
+
+## GPIO Connections
+
+| Component | GPIO |
+|-----------|------|
+| Heart Rate | GPIO34 |
+| SpO₂ | GPIO35 |
+| Oxygen Level | GPIO32 |
+| AQI | GPIO33 |
+| DHT22 | GPIO15 |
+| OLED SDA | GPIO21 |
+| OLED SCL | GPIO22 |
+| LED | GPIO12 |
+| Buzzer | GPIO13 |
+
+---
+
+## FreeRTOS Tasks
+
+### Medical Task
+Reads Heart Rate, SpO₂, and Body Temperature.
+
+### Facility Task
+Reads Room Temperature, Oxygen Level, and AQI.
+
+### Display Task
+Alternates between Medical Dashboard and Facility Dashboard on the OLED.
+
+### MQTT Simulation Task
+Publishes simulated MQTT topics through the Serial Monitor.
+
+### Alert Task
+Triggers LED and buzzer during abnormal conditions.
+
+### Summary Task
+Calculates and displays average sensor values periodically.
+
+---
+
+## Simulated MQTT Topics
+
+Medical Dashboard
+
+```
+medical/patient
+```
+
+Facility Dashboard
+
+```
+facility/environment
+```
+
+Alert Topic
+
+```
+alerts/critical
+```
+
+Summary Topic
+
+```
+medical/summary
+```
+
+---
+
+## Alert Conditions
+
+- SpO₂ < 92%
+- Body Temperature > 38°C
+- AQI > 150
+
+When any condition is detected:
+
+- LED blinks
+- Buzzer activates
+- Alert message is printed on the Serial Monitor
+
+---
+
+## Project Structure
+
+```
+Task_2_DualRole_IoT_Monitoring/
+
+│── README.md
+│── Task2_DualRole_IoT_Monitoring.ino
+│── diagram.json
+│── libraries.txt
+│── Report.pdf
+│── Abstract.pdf
+│── Description.pdf
+│── Images/
+```
+
+---
+
+## Future Improvements
+
+- Real MQTT Broker Integration
+- Blynk IoT Dashboard
+- Cloud Data Logging
+- Database Storage
+- Patient History Tracking
+- Web Dashboard
+- AI-Based Health Prediction
+- Doctor Notification System
+
+---
+
+## Author
+
+**Shivakumar Gouda S Patil**
+
+Artificial Intelligence & Machine Learning Engineering Student
+
+PES College of Engineering, Mandya
+
+---
+
+## License
+
+This project is developed for educational purposes as part of an IoT and FreeRTOS healthcare monitoring system.
